@@ -1,0 +1,21 @@
+{
+  "name": "dexscreener-scraper",
+  "version": "1.0.0",
+  "description": "Scrape token names from DexScreener Avalanche page",
+  "main": "dist/token_scraper.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "concurrently \"node dist/token_scraper.js\" \"node dist/twitter_scraper.js\" \"node dist/ai_analyzer.js\"",
+    "dev": "tsc && node dist/test.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.839.0",
+    "concurrently": "^9.2.0",
+    "dotenv": "^17.0.0",
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.2",
+    "typescript": "^5.0.0"
+  }
+}

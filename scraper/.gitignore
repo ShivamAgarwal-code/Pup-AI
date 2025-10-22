@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+cookies.json
+pnpm-lock.yaml
+tweets.json
+avalanche_tokens.json
+ai_analyzer.json
