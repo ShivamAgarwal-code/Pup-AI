@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 26, 26, 26;
-  --background-rgb: 245, 230, 216;
+  --foreground-rgb: 15, 23, 42;
+  --background-rgb: 248, 250, 252;
 }
 
 @theme inline {
@@ -16,8 +16,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1A1A1A;
-    --foreground: #FFFAF5;
+    --background: #0f172a;
+    --foreground: #f8fafc;
   }
 }
 
@@ -29,9 +29,6 @@ body {
 
 /* Custom dashboard background */
 .dashboard-bg {
-  background-color: #F5E6D8;
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background-attachment: fixed;
 }

@@ -12,11 +12,15 @@ module.exports = {
       },
       colors: {
         trendpup: {
-          beige: '#F5E6D8',
-          brown: '#8D6E63',
-          orange: '#FF9800',
-          dark: '#1A1A1A',
-          light: '#FFFAF5',
+          primary: '#2563eb',      // Blue
+          secondary: '#64748b',    // Slate
+          accent: '#0ea5e9',       // Sky blue
+          neutral: '#f8fafc',      // Light gray
+          dark: '#0f172a',         // Dark slate
+          light: '#ffffff',        // White
+          success: '#10b981',      // Green
+          warning: '#f59e0b',      // Amber
+          error: '#ef4444',        // Red
         },
       },
     },

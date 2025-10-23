@@ -239,48 +239,48 @@ export default function Home() {
     };
 
     const isActive = activeWindowId === id;
-    const activeClass = isActive ? 'ring-2 ring-trendpup-orange' : '';
+    const activeClass = isActive ? 'ring-2 ring-trendpup-primary' : '';
 
     switch(id) {
       case 'dashboard':
         return (
           <div 
-            className={`bg-white rounded-xl shadow-2xl border-2 border-black overflow-hidden ${activeClass}`}
+            className={`bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden ${activeClass}`}
             style={windowStyle}
           >
             <div 
-              className="bg-gradient-to-r from-trendpup-dark to-gray-800 text-white p-3 flex justify-between items-center cursor-move"
+              className="bg-gradient-to-r from-trendpup-primary to-trendpup-accent text-white p-4 flex justify-between items-center cursor-move"
               onMouseDown={(e) => startDrag(e, id)}
             >
               <div className="flex items-center">
-                <FaDog className="mr-2" />
-                <h2 className="text-xl font-bold">Dashboard</h2>
+                <FaDog className="mr-3 text-lg" />
+                <h2 className="text-xl font-semibold">Dashboard</h2>
               </div>
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleWindow(id);
                 }}
-                className="bg-red-600 hover:bg-red-700 p-1.5 rounded-full text-white transition-colors z-50"
+                className="bg-white/20 hover:bg-white/30 p-2 rounded-lg text-white transition-colors z-50"
               >
                 <FaTimes size={14} />
               </button>
             </div>
             <div className="p-6">
               <AccessStatus />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Dashboard widgets */}
-                <div className="bg-gradient-to-br from-trendpup-beige/50 to-trendpup-beige p-4 rounded-xl shadow-sm">
-                  <h3 className="text-lg font-semibold text-trendpup-dark mb-1">Total Value</h3>
-                  <p className="text-2xl font-bold text-trendpup-orange">$0.00</p>
+                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-700 mb-2">Total Value</h3>
+                  <p className="text-3xl font-bold text-trendpup-primary">$0.00</p>
                 </div>
-                <div className="bg-gradient-to-br from-trendpup-beige/50 to-trendpup-beige p-4 rounded-xl shadow-sm">
-                  <h3 className="text-lg font-semibold text-trendpup-dark mb-1">24h Change</h3>
-                  <p className="text-2xl font-bold text-green-600">+0.00%</p>
+                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-700 mb-2">24h Change</h3>
+                  <p className="text-3xl font-bold text-trendpup-success">+0.00%</p>
                 </div>
-                <div className="md:col-span-2 bg-gradient-to-br from-trendpup-beige/50 to-trendpup-beige p-4 rounded-xl shadow-sm">
-                  <h3 className="text-lg font-semibold text-trendpup-dark mb-1">Active Positions</h3>
-                  <p className="text-2xl font-bold text-trendpup-orange">0</p>
+                <div className="md:col-span-2 bg-gray-50 p-6 rounded-xl border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-700 mb-2">Active Positions</h3>
+                  <p className="text-3xl font-bold text-trendpup-primary">0</p>
                 </div>
               </div>
             </div>
@@ -299,7 +299,7 @@ export default function Home() {
       case 'chat':
         return (
           <div 
-            className={`bg-white rounded-xl shadow-2xl border-2 border-black overflow-hidden ${activeClass}`}
+            className={`bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden ${activeClass}`}
             style={{
               ...windowStyle,
               width: `${Math.max(windowData.size.width, 500)}px`,
@@ -307,7 +307,7 @@ export default function Home() {
             }}
           >
             <div 
-              className="bg-gradient-to-r from-trendpup-dark to-gray-800 text-white p-3 flex justify-between items-center cursor-move"
+              className="bg-gradient-to-r from-trendpup-primary to-trendpup-accent text-white p-4 flex justify-between items-center cursor-move"
               onMouseDown={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -315,15 +315,15 @@ export default function Home() {
               }}
             >
               <div className="flex items-center">
-                <FaComments className="mr-2" />
-                <h2 className="text-xl font-bold">Chat</h2>
+                <FaComments className="mr-3 text-lg" />
+                <h2 className="text-xl font-semibold">Chat</h2>
               </div>
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleWindow(id);
                 }}
-                className="bg-red-600 hover:bg-red-700 p-1.5 rounded-full text-white transition-colors z-50"
+                className="bg-white/20 hover:bg-white/30 p-2 rounded-lg text-white transition-colors z-50"
               >
                 <FaTimes size={14} />
               </button>
@@ -351,28 +351,28 @@ export default function Home() {
       case 'memecoins':
         return (
           <div 
-            className={`bg-white rounded-xl shadow-2xl border-2 border-black overflow-hidden ${activeClass}`}
+            className={`bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden ${activeClass}`}
             style={windowStyle}
           >
             <div 
-              className="bg-gradient-to-r from-trendpup-dark to-gray-800 text-white p-3 flex justify-between items-center cursor-move"
+              className="bg-gradient-to-r from-trendpup-primary to-trendpup-accent text-white p-4 flex justify-between items-center cursor-move"
               onMouseDown={(e) => startDrag(e, id)}
             >
               <div className="flex items-center">
-                <FaChartLine className="mr-2" />
-                <h2 className="text-xl font-bold">Memecoins</h2>
+                <FaChartLine className="mr-3 text-lg" />
+                <h2 className="text-xl font-semibold">Memecoins</h2>
               </div>
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleWindow(id);
                 }}
-                className="bg-red-600 hover:bg-red-700 p-1.5 rounded-full text-white transition-colors z-50"
+                className="bg-white/20 hover:bg-white/30 p-2 rounded-lg text-white transition-colors z-50"
               >
                 <FaTimes size={14} />
               </button>
             </div>
-            <div className="p-4 max-h-[500px] overflow-auto">
+            <div className="p-6 max-h-[500px] overflow-auto">
               <MemecoinsExplorer />
             </div>
             {/* Resize handle */}
@@ -390,34 +390,34 @@ export default function Home() {
       case 'stats':
         return (
           <div 
-            className={`bg-white rounded-xl shadow-2xl border-2 border-black overflow-hidden ${activeClass}`}
+            className={`bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden ${activeClass}`}
             style={windowStyle}
           >
             <div 
-              className="bg-gradient-to-r from-trendpup-dark to-gray-800 text-white p-3 flex justify-between items-center cursor-move"
+              className="bg-gradient-to-r from-trendpup-primary to-trendpup-accent text-white p-4 flex justify-between items-center cursor-move"
               onMouseDown={(e) => startDrag(e, id)}
             >
               <div className="flex items-center">
-                <FaChartBar className="mr-2" />
-                <h2 className="text-xl font-bold">Statistics</h2>
+                <FaChartBar className="mr-3 text-lg" />
+                <h2 className="text-xl font-semibold">Statistics</h2>
               </div>
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleWindow(id);
                 }}
-                className="bg-red-600 hover:bg-red-700 p-1.5 rounded-full text-white transition-colors z-50"
+                className="bg-white/20 hover:bg-white/30 p-2 rounded-lg text-white transition-colors z-50"
               >
                 <FaTimes size={14} />
               </button>
             </div>
             <div className="p-6">
-              <div className="bg-gradient-to-br from-trendpup-beige/50 to-trendpup-beige p-4 rounded-xl shadow-sm mb-4">
-                <h3 className="text-lg font-semibold text-trendpup-dark mb-2">Top Gainers</h3>
+              <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-4">
+                <h3 className="text-lg font-semibold text-gray-700 mb-3">Top Gainers</h3>
                 <p className="text-gray-600">No data available</p>
               </div>
-              <div className="bg-gradient-to-br from-trendpup-beige/50 to-trendpup-beige p-4 rounded-xl shadow-sm">
-                <h3 className="text-lg font-semibold text-trendpup-dark mb-2">Market Overview</h3>
+              <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-700 mb-3">Market Overview</h3>
                 <p className="text-gray-600">No data available</p>
               </div>
             </div>
@@ -656,20 +656,20 @@ export default function Home() {
   const renderLandingPage = () => {
       return (
         <div className="flex items-center justify-center min-h-screen p-4">
-          <div className="bg-white/95 rounded-3xl shadow-2xl border border-trendpup-brown/10 p-8 md:p-12 max-w-md w-full text-center">
-            <div className="flex justify-center mb-6">
+          <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8 md:p-12 max-w-md w-full text-center">
+            <div className="flex justify-center mb-8">
               <Image 
                 src="/trendpup-logo.png" 
                 alt="TrendPup Logo" 
-                width={200} 
-                height={200}
+                width={180} 
+                height={180}
                 priority
                 className="rounded-full"
               />
             </div>
             
-            <h1 className="text-3xl font-bold text-trendpup-dark mb-2">Pup AI</h1>
-            <p className="text-gray-600 mb-8 md:mb-10 text-sm">
+            <h1 className="text-4xl font-bold text-gray-900 mb-3">Pup AI</h1>
+            <p className="text-gray-600 mb-10 text-base">
               An autonomous AI agent that finds trending memecoins on Avalanche.
             </p>
             
@@ -684,7 +684,7 @@ export default function Home() {
                   openMultipleWindows([]);
                 }, 100);
                 }}
-                className="px-6 md:px-8 py-3 bg-trendpup-beige text-trendpup-dark rounded-lg font-medium hover:bg-trendpup-beige/80 transition-colors shadow-sm"
+                className="px-8 py-4 bg-trendpup-primary text-white rounded-xl font-semibold hover:bg-trendpup-primary/90 transition-colors shadow-sm"
               >
                 Get Started
               </button>
@@ -697,7 +697,7 @@ export default function Home() {
                     toggleWindow('chat');
                   }, 100);
                 }}
-                className="px-6 md:px-8 py-3 bg-trendpup-beige text-trendpup-dark rounded-lg font-medium hover:bg-trendpup-beige/80 transition-colors shadow-sm"
+                className="px-8 py-4 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors shadow-sm"
               >
                 Chat Mode
               </button>
@@ -749,7 +749,7 @@ export default function Home() {
             </div>
 
             {/* Side Menu Squares - now with better styling */}
-            <div className="fixed left-6 top-1/2 transform -translate-y-1/2 space-y-5 z-40">
+            <div className="fixed left-6 top-1/2 transform -translate-y-1/2 space-y-4 z-40">
               {menuItems.filter(item => item.id !== 'whitepaper').map((item) => (
                 <button
                   key={item.id}
@@ -759,12 +759,12 @@ export default function Home() {
                   }}
                   className={`w-14 h-14 flex items-center justify-center rounded-xl transition-all duration-200 shadow-lg ${
                     openWindows.some(w => w.id === item.id)
-                      ? 'bg-trendpup-orange text-white scale-110'
-                      : 'bg-white text-trendpup-dark hover:bg-trendpup-beige hover:scale-105'
+                      ? 'bg-trendpup-primary text-white scale-110'
+                      : 'bg-white text-gray-600 hover:bg-gray-50 hover:scale-105 border border-gray-200'
                   }`}
                   title={item.label}
                 >
-                  <span className="text-2xl">{item.icon}</span>
+                  <span className="text-xl">{item.icon}</span>
                 </button>
               ))}
             </div>
@@ -792,15 +792,15 @@ export default function Home() {
             {/* Welcome message if no windows are open */}
             {openWindows.length === 0 && (
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-12 bg-white/90 rounded-2xl shadow-lg max-w-md border-2 border-black">
+                <div className="text-center p-12 bg-white rounded-2xl shadow-lg max-w-md border border-gray-200">
                   <Image 
                     src="/trendpup-logo.png" 
                     alt="TrendPup Logo" 
                     width={100} 
                     height={100}
-                    className="mx-auto mb-4" 
+                    className="mx-auto mb-6" 
                   />
-                  <h2 className="text-2xl font-bold text-trendpup-dark mb-4">Welcome to TrendPup</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">Welcome to TrendPup</h2>
                   <p className="text-gray-600 mb-6">Click on the menu items on the left to get started</p>
                 </div>
               </div>

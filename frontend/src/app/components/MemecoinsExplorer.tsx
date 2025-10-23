@@ -108,51 +108,51 @@ export default function MemecoinsExplorer() {
   }, []);
 
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-trendpup-brown/20 overflow-hidden">
-      <div className="p-4 bg-trendpup-dark text-white">
-        <h2 className="text-xl font-bold">Memecoin Explorer</h2>
-        <p className="text-sm opacity-75">Discover trending memecoins with TrendPup intelligence</p>
+    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+      <div className="p-6 bg-gradient-to-r from-trendpup-primary to-trendpup-accent text-white">
+        <h2 className="text-2xl font-semibold">Memecoin Explorer</h2>
+        <p className="text-sm opacity-90 mt-1">Discover trending memecoins with AI intelligence</p>
       </div>
       
       <div className="p-4">
-        <div className="relative mb-4">
+        <div className="relative mb-6">
           <input
             type="text"
             placeholder="Search coins..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full p-3 pl-10 border border-trendpup-brown/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-trendpup-orange"
+            className="w-full p-4 pl-12 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-trendpup-primary focus:border-transparent bg-gray-50 transition-all duration-200"
           />
-          <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+          <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
         </div>
         
-        <div className="flex mb-4 border-b border-trendpup-brown/10">
+        <div className="flex mb-6 bg-gray-50 rounded-xl p-1">
           <button
             onClick={() => setActiveTab('trending')}
-            className={`px-4 py-2 font-medium ${
+            className={`px-4 py-3 font-medium rounded-lg transition-all duration-200 ${
               activeTab === 'trending' 
-                ? 'text-trendpup-orange border-b-2 border-trendpup-orange' 
-                : 'text-gray-500 hover:text-trendpup-orange'
+                ? 'bg-white text-trendpup-primary shadow-sm' 
+                : 'text-gray-600 hover:text-trendpup-primary'
             }`}
           >
             Trending
           </button>
           <button
             onClick={() => setActiveTab('favorites')}
-            className={`px-4 py-2 font-medium ${
+            className={`px-4 py-3 font-medium rounded-lg transition-all duration-200 ${
               activeTab === 'favorites' 
-                ? 'text-trendpup-orange border-b-2 border-trendpup-orange' 
-                : 'text-gray-500 hover:text-trendpup-orange'
+                ? 'bg-white text-trendpup-primary shadow-sm' 
+                : 'text-gray-600 hover:text-trendpup-primary'
             }`}
           >
             Favorites
           </button>
           <button
             onClick={() => setActiveTab('safe')}
-            className={`px-4 py-2 font-medium ${
+            className={`px-4 py-3 font-medium rounded-lg transition-all duration-200 ${
               activeTab === 'safe' 
-                ? 'text-trendpup-orange border-b-2 border-trendpup-orange' 
-                : 'text-gray-500 hover:text-trendpup-orange'
+                ? 'bg-white text-trendpup-primary shadow-sm' 
+                : 'text-gray-600 hover:text-trendpup-primary'
             }`}
           >
             Safest
@@ -160,57 +160,65 @@ export default function MemecoinsExplorer() {
         </div>
         
         {isLoading ? (
-          <div className="flex justify-center items-center py-10">
-            <FaSpinner className="animate-spin text-trendpup-orange text-3xl" />
-            <span className="ml-2 text-gray-600">Loading memecoin data...</span>
+          <div className="flex justify-center items-center py-12">
+            <FaSpinner className="animate-spin text-trendpup-primary text-2xl" />
+            <span className="ml-3 text-gray-600">Loading memecoin data...</span>
           </div>
         ) : error ? (
-          <div className="text-center py-10 text-red-500">
-            <FaInfoCircle className="text-3xl mb-2 inline-block" />
-            <p>{error}</p>
+          <div className="text-center py-12 text-trendpup-error">
+            <FaInfoCircle className="text-3xl mb-3 inline-block" />
+            <p className="text-lg">{error}</p>
           </div>
         ) : (
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto rounded-xl border border-gray-200">
             <table className="min-w-full">
-              <thead className="bg-trendpup-beige">
+              <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-trendpup-dark uppercase tracking-wider">Symbol</th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-trendpup-dark uppercase tracking-wider">Price</th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-trendpup-dark uppercase tracking-wider">Volume</th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-trendpup-dark uppercase tracking-wider">Market Cap</th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-trendpup-dark uppercase tracking-wider">24h Change</th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-trendpup-dark uppercase tracking-wider">Age</th>
-                  <th className="px-4 py-3 text-center text-xs font-medium text-trendpup-dark uppercase tracking-wider">Potential</th>
-                  <th className="px-4 py-3 text-center text-xs font-medium text-trendpup-dark uppercase tracking-wider">Risk</th>
-                  <th className="px-4 py-3 text-center text-xs font-medium text-trendpup-dark uppercase tracking-wider">Favorite</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Symbol</th>
+                  <th className="px-6 py-4 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Price</th>
+                  <th className="px-6 py-4 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Volume</th>
+                  <th className="px-6 py-4 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Market Cap</th>
+                  <th className="px-6 py-4 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">24h Change</th>
+                  <th className="px-6 py-4 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Age</th>
+                  <th className="px-6 py-4 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Potential</th>
+                  <th className="px-6 py-4 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Risk</th>
+                  <th className="px-6 py-4 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Favorite</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-trendpup-beige/50">
+              <tbody className="divide-y divide-gray-100">
                 {sortedCoins.length > 0 ? (
                   sortedCoins.map((coin) => (
-                    <tr key={coin.id} className="hover:bg-trendpup-beige/20 cursor-pointer"
+                    <tr key={coin.id} className="hover:bg-gray-50 cursor-pointer transition-colors duration-150"
                       onClick={() => openHelixLink(coin.href)}
                     >
-                      <td className="px-4 py-4 whitespace-nowrap text-sm font-medium">{coin.symbol}{coin.symbol1 ? `/${coin.symbol1}` : ''}</td>
-                      <td className="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">${coin.price.toFixed(coin.price < 0.001 ? 8 : 6)}</td>
-                      <td className="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">{coin.volume}</td>
-                      <td className="px-4 py-4 whitespace-nowrap text-right text-sm text-gray-500">{coin.marketCap}</td>
-                      <td className={`px-4 py-4 whitespace-nowrap text-right text-sm font-medium ${coin.change24h >= 0 ? 'text-green-600' : 'text-red-600'}`}>{coin.change24h >= 0 ? '+' : ''}{coin.change24h}%</td>
-                      <td className="px-4 py-4 whitespace-nowrap text-right text-sm text-gray-500">{coin.age}</td>
-                      <td className="px-4 py-4 whitespace-nowrap text-center">{coin.potential}</td>
-                      <td className="px-4 py-4 whitespace-nowrap text-center">{coin.risk}</td>
-                      <td className="px-4 py-4 whitespace-nowrap text-center">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">{coin.symbol}{coin.symbol1 ? `/${coin.symbol1}` : ''}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-semibold text-gray-900">${coin.price.toFixed(coin.price < 0.001 ? 8 : 6)}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600">{coin.volume}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600">{coin.marketCap}</td>
+                      <td className={`px-6 py-4 whitespace-nowrap text-right text-sm font-semibold ${coin.change24h >= 0 ? 'text-trendpup-success' : 'text-trendpup-error'}`}>{coin.change24h >= 0 ? '+' : ''}{coin.change24h}%</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600">{coin.age}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-center">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-trendpup-primary/10 text-trendpup-primary">
+                          {coin.potential}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-center">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-trendpup-warning/10 text-trendpup-warning">
+                          {coin.risk}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-center">
                         <button 
                           onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
                             toggleFavorite(coin.id);
                           }}
-                          className="text-lg"
+                          className="text-lg transition-colors duration-200"
                         >
                           {coin.favorite ? 
-                            <FaStar className="text-trendpup-orange" /> : 
-                            <FaRegStar className="text-gray-400 hover:text-trendpup-orange" />
+                            <FaStar className="text-trendpup-warning" /> : 
+                            <FaRegStar className="text-gray-400 hover:text-trendpup-warning" />
                           }
                         </button>
                       </td>
@@ -218,7 +226,7 @@ export default function MemecoinsExplorer() {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={9} className="px-4 py-10 text-center text-gray-500">
+                    <td colSpan={9} className="px-6 py-12 text-center text-gray-500">
                       No memecoins found matching your search criteria
                     </td>
                   </tr>
