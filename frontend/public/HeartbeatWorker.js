@@ -48,5 +48,4 @@ function stopHeartbeat() {
 self.addEventListener('beforeunload', () => {
     stopHeartbeat();
 });
-export {};
 //# sourceMappingURL=HeartbeatWorker.js.map

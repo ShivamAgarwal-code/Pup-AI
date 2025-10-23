@@ -5,7 +5,7 @@ export const config = getDefaultConfig({
   appName: 'TrendPup',
   projectId: 'YOUR_PROJECT_ID', // Replace with your WalletConnect project ID  
   chains: [avalancheFuji],
-  ssr: true,
+  ssr: false, // Disable SSR to avoid prerendering issues
 });
 
 // Ensure we export the chain for use in contracts
