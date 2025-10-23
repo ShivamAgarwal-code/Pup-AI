@@ -21,7 +21,7 @@ export default function AccessStatus() {
       <FaCheckCircle className="mr-2 text-green-600" />
       <div className="flex-1">
         <p className="font-medium">Premium Access Active</p>
-        <p className="text-sm text-green-600">You have lifetime access to TrendPup AI features</p>
+        <p className="text-sm text-green-600">You have lifetime access to Pup AI features</p>
       </div>
       <div className="ml-2">
         <FaInfoCircle className="text-green-600" title="Access verified on blockchain" />

@@ -92,9 +92,9 @@ export default function AccessControl({ children }: AccessControlProps) {
             />
           </div>
           
-          <h1 className="text-3xl font-bold text-trendpup-dark mb-2">TrendPup AI</h1>
+          <h1 className="text-3xl font-bold text-trendpup-dark mb-2">Pup AI</h1>
           <p className="text-gray-600 mb-6 text-sm">
-            Connect your wallet to access TrendPup's premium memecoin intelligence.
+            Connect your wallet to access Pup's premium memecoin intelligence.
           </p>
           
           <div className="flex items-center justify-center mb-6">
@@ -128,7 +128,7 @@ export default function AccessControl({ children }: AccessControlProps) {
           
           <h1 className="text-3xl font-bold text-trendpup-dark mb-2">Premium Access Required</h1>
           <p className="text-gray-600 mb-6 text-sm">
-            TrendPup is a premium service that requires a one-time access fee to prevent spam and ensure quality.
+            Pup AI is a premium service that requires a one-time access fee to prevent spam and ensure quality.
           </p>
           
           <div className="bg-gradient-to-br from-trendpup-beige/50 to-trendpup-beige p-6 rounded-xl mb-6">
@@ -138,7 +138,7 @@ export default function AccessControl({ children }: AccessControlProps) {
             </div>
             <p className="text-sm text-gray-600 mb-4">One-time access fee on Avalanche Fuji Testnet</p>
             <div className="text-xs text-gray-500 space-y-1">
-              <p>✓ Lifetime access to TrendPup AI</p>
+              <p>✓ Lifetime access to Pup AI</p>
               <p>✓ Real-time memecoin tracking</p>
               <p>✓ AI-powered trend analysis</p>
               <p>✓ Premium dashboard features</p>
@@ -180,7 +180,7 @@ export default function AccessControl({ children }: AccessControlProps) {
           
           <h1 className="text-3xl font-bold text-trendpup-dark mb-2">Confirm Payment</h1>
           <p className="text-gray-600 mb-6 text-sm">
-            You're about to pay 0.2 AVAX to gain lifetime access to TrendPup AI.
+            You're about to pay 0.2 AVAX to gain lifetime access to Pup AI.
           </p>
           
           <div className="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 p-6 rounded-xl mb-6">

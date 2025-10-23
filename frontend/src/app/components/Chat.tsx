@@ -41,7 +41,7 @@ export default function Chat() {
             // Initial connection message
             setMessages(prev => [...prev, {
               type: 'assistant',
-              content: 'Connected to TrendPup Assistant',
+              content: 'Connected to Pup Assistant',
               timestamp: new Date()
             }]);
           } else if (data.type === 'message' || data.text) {

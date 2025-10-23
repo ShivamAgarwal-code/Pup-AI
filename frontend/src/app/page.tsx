@@ -668,7 +668,7 @@ export default function Home() {
               />
             </div>
             
-            <h1 className="text-3xl font-bold text-trendpup-dark mb-2">TrendPup AI</h1>
+            <h1 className="text-3xl font-bold text-trendpup-dark mb-2">Pup AI</h1>
             <p className="text-gray-600 mb-8 md:mb-10 text-sm">
               An autonomous AI agent that finds trending memecoins on Avalanche.
             </p>

@@ -322,7 +322,7 @@ export default function ChatInterface({ fullPage = false, agentId }: ChatInterfa
             />
           </div>
           <div>
-            <h1 className="text-xl font-semibold">TrendPup Assistant</h1>
+            <h1 className="text-xl font-semibold">Pup Assistant</h1>
             <p className="text-sm opacity-75">
               {isConnected ? `Connected to ${targetAgentId ? 'Agent ' + targetAgentId.slice(0, 8) + '...' : 'TrendPup'} - Ready to chat` : 'Connecting...'}
             </p>

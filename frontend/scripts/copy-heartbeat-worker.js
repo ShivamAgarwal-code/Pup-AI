@@ -10,11 +10,15 @@ if (fs.existsSync(coinbaseWorker)) {
   let content = fs.readFileSync(coinbaseWorker, 'utf8');
   
   // Remove the export statement that causes build issues
-  content = content.replace(/export\s*\{\s*\};\s*\/\/# sourceMappingURL=HeartbeatWorker\.js\.map/, '//# sourceMappingURL=HeartbeatWorker.js.map');
+  const cleanedContent = content.replace(/export\s*\{\s*\};\s*\/\/# sourceMappingURL=HeartbeatWorker\.js\.map/, '//# sourceMappingURL=HeartbeatWorker.js.map');
   
-  // Write the modified content
-  fs.writeFileSync(publicWorker, content);
+  // Write the modified content to public directory
+  fs.writeFileSync(publicWorker, cleanedContent);
   console.log('Copied HeartbeatWorker.js to public/ (with export statement removed)');
+  
+  // Also directly modify the original file in node_modules to prevent build issues
+  fs.writeFileSync(coinbaseWorker, cleanedContent);
+  console.log('Modified original HeartbeatWorker.js in node_modules (with export statement removed)');
 } else {
   console.error('Coinbase HeartbeatWorker.js not found!');
   process.exit(1);
